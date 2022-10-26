@@ -1,12 +1,10 @@
 from flask import Flask
 from flask.helpers import send_from_directory
-from flask_cors import CORS, cross_origin
 
-server = Flask(__name__, static_folder = 'hwsets/build', static_url_path='')
-cors = CORS(server)
+server = Flask(__name__, static_folder = './build', static_url_path='')
+
 
 @server.route('/CheckIn/<projectId>/<qty>', methods = ["GET"])
-@cross_origin()
 
 def checkIn_hardware(projectId, qty):
     value = {
