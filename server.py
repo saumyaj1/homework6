@@ -1,7 +1,7 @@
 from flask import Flask
 from flask.helpers import send_from_directory
 
-server = Flask(__name__, static_folder = './build', static_url_path='')
+server = Flask(__name__, static_folder = './build', static_url_path='/')
 
 
 @server.route('/CheckIn/<projectId>/<qty>', methods = ["GET"])
