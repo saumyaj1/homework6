@@ -69,10 +69,12 @@ function HWSet(props){
     else{
       setState(parseInt(props.availableSets, 10)); 
     }
-    fetch("/CheckedIn/" + props.name + "/" + y).then(response => response.json()
-      ).then((data) =>{
-        console.log(data) 
-        alert("CheckedIn" + data.Quantity)}) 
+    let url = `https://sheltered-plains-55782.herokuapp.com/CheckIn/${props.name}/${y}`; 
+    fetch(url).then((response) => response.json().then(value => {
+      let quantity = value["Quantity"];
+      console.log(quantity);
+      alert(quantity)
+    }))
   }
 
   const CheckOut = (val) => {
