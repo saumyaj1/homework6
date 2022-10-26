@@ -76,7 +76,6 @@ function HWSet(props){
   }
 
   const CheckOut = (val) => {
-    alert("hi"); 
     let y = availableSets; 
     if(parseInt(val, 10) < parseInt(availableSets, 10)){
       let x = (parseInt(availableSets, 10) - parseInt(val, 10)); 
@@ -89,6 +88,7 @@ function HWSet(props){
     let url = `https://sheltered-plains-55782.herokuapp.com/CheckOut/${props.name}/${y}`; 
     fetch(url).then((response) => response.json().then(value => {
       let quantity = value["Quantity"];
+      console.log(quantity);
       alert(quantity)
     }))
   }
