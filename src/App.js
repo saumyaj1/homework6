@@ -76,6 +76,7 @@ function HWSet(props){
   }
 
   const CheckOut = (val) => {
+    alert("hi"); 
     let y = availableSets; 
     if(parseInt(val, 10) < parseInt(availableSets, 10)){
       let x = (parseInt(availableSets, 10) - parseInt(val, 10)); 
