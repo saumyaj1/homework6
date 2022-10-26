@@ -1,3 +1,4 @@
+from xmlrpc.client import Server
 from flask import Flask
 from flask.helpers import send_from_directory
 
@@ -33,6 +34,9 @@ def leaveProject(projectId):
     }
     return value
 
+@server.errorhandler(404)
+def not_found(e):
+    return server.send_static_file('index.html')
 
 if __name__ == "__main__":
     server.run(host = '0.0.0.0', debug = False, port = os.environ.get('PORT', 80))

@@ -1,7 +1,6 @@
 {
   "name": "hwsets",
   "version": "0.1.0",
-  "proxy": "localhost:5000",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.4",
