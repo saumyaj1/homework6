@@ -1,3 +1,8 @@
+.box:joinPressed{
+  background-color: green;
+}
+
+
 .App {
   text-align: center;
 }
