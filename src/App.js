@@ -85,7 +85,7 @@ function HWSet(props){
     else{
       setState(0); 
     }
-    let url = 'https://sheltered-plains-55782.herokuapp.com/CheckOut/${props.name}/${y}'; 
+    let url = `https://sheltered-plains-55782.herokuapp.com/CheckOut/${props.name}/${y}`; 
     fetch(url).then((response) => response.json().then(value => {
       let quantity = value["Quantity"];
       alert(quantity)
