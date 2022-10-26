@@ -85,10 +85,10 @@ function HWSet(props){
     else{
       setState(0); 
     }
-    fetch("/CheckedOut/" + props.name + "/" + y).then(response => response.json()
-      ).then((data) =>{
-        console.log(data) 
-        alert("CheckedOut" + data.Quantity)}) 
+    fetch("/CheckedOut/" + props.name + "/" + y).then((response) => response.json().then(value => {
+      let quantity = value["Quantity"];
+      alert(quantity)
+    }))
   }
 
   return(
